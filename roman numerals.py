@@ -1,5 +1,3 @@
-
-
 def roman(number=int()):
     value = str(number)
     symbol = {1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI', 7: 'VII', 8: 'VIII', 9: 'IX',
@@ -34,12 +32,20 @@ def roman(number=int()):
             result += str(symbol[int(value[3])])
     return result
 
-
+num = 3999
+resultado = 0
 while True:
     print('\033[36mDigite um número entre 1 a 3999.\033[m[ou 0]')
-    num = int(input('>> '))
+    num = input('>> ')
 
-    if int(num) == 0:
-        break
+    try:
+        num = int(num)
+        if num > 3999:
+            print('Erro! Você não digitou uma opção valida. ')
+        elif num == 0:
+            break
+        else:
+            print(f'O valor {num} representa \033[32m{roman(num)}\033[m em algarismos romano.\n')
 
-    print(f'O valor {num} representa \033[32m{roman(num)}\033[m em algarismos romano.')
+    except ValueError:
+        print('Erro! Você não digitou um número.')
