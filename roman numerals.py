@@ -46,5 +46,6 @@ while True:
             break
         else:
             print(f'O valor {num} representa \033[32m{roman(num)}\033[m em algarismos romano.\n')
+            
     except ValueError:
         print('\033[31mErro! Você não digitou uma opção valida. ')
