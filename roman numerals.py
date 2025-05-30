@@ -41,11 +41,10 @@ while True:
     try:
         num = int(num)
         if num > 3999:
-            print('Erro! Você não digitou uma opção valida. ')
+            print('\033[31mErro! Você não digitou um número valido.')
         elif num == 0:
             break
         else:
             print(f'O valor {num} representa \033[32m{roman(num)}\033[m em algarismos romano.\n')
-
     except ValueError:
-        print('Erro! Você não digitou um número.')
+        print('\033[31mErro! Você não digitou uma opção valida. ')
